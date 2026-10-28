@@ -1,0 +1,16 @@
+[Unit]
+Description=NAAP Freeze Manager Bridge
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=@CMAKE_INSTALL_PREFIX@/bin/freeze-manager
+Restart=on-failure
+RestartSec=2
+
+# 允许本服务在自己的 cgroup 子树内创建子 cgroup 并写入
+Delegate=yes
+
+[Install]
+WantedBy=graphical-session.target
