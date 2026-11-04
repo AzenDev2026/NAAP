@@ -1,0 +1,42 @@
+NAAP 修复完成 — GitHub 更新步骤（网页版，不用敲命令）
+====================================================
+
+你桌面上的 naap 文件夹已经是修复后的最新版，并且已经安装到
+你电脑上正在运行了。现在只要把新文件传到 GitHub 上就行。
+
+第 1 步：更新 naap 文件夹里的文件
+---------------------------------
+1. 打开 https://github.com/AzenDev2026/NAAP
+2. 点击进入 naap 文件夹
+3. 点右上角 "Add file" 按钮 → 选 "Upload files"
+4. 解压 "naap-更新文件.zip"，把里面的所有文件和文件夹
+   全部拖进网页的上传区域（一共 12 个文件，build 文件夹不用传）
+5. 页面下方点绿色 "Commit changes" 按钮（可以直接提交到 main 分支）
+
+第 2 步：删除一个旧文件（重要！）
+---------------------------------
+修复时发现 KWin 要求的文件夹名是 contents（复数），旧项目写的
+是 content（单数），所以旧脚本从来没被 KWin 加载过。
+1. 在 GitHub 上进入 naap/kwin-script 文件夹
+2. 里面会有一个 content 文件夹和一个 contents 文件夹
+3. 点进 content 文件夹，点右上角 "..." 菜单，选 "Delete directory"
+4. 提交删除（Commit changes）
+   （删除前可以点开对比一下：新的代码在 contents/code/main.js）
+
+第 3 步：更新仓库首页的 README
+------------------------------
+1. 回到仓库主页 https://github.com/AzenDev2026/NAAP
+2. 点 "Add file" → "Upload files"
+3. 上传 "根README.md" 这一个文件
+4. Commit changes
+
+完成！三个步骤做完，GitHub 就和本地一样了。
+
+备注：
+- 本机已经装好并运行新版：系统设置里的 KWin 脚本已启用，
+  服务已在后台运行，最小化窗口等 5 秒就会冻结应用。
+- 想看它工作：最小化任意一个应用窗口，等 5 秒，然后运行
+  journalctl --user -u naap.service -f
+  就能看到 "[naap] froze pid ..." 的日志；恢复窗口会立刻解冻。
+- 以后改代码重新安装：在 Konsole 里运行
+  bash ~/Desktop/naap/install.sh
