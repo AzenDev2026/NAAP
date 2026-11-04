@@ -1,0 +1,41 @@
+Start testing: Nov 04 18:05 AEDT
+----------------------------------------------------------
+1/1 Testing: cgroup-helpers
+1/1 Test: cgroup-helpers
+Command: "/home/nvazen/Desktop/naap/build/test-cgroup"
+Directory: /home/nvazen/Desktop/naap/build
+"cgroup-helpers" start time: Nov 04 18:05 AEDT
+Output:
+----------------------------------------------------------
+selfCgroup() = /sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/dsh-subprocess-315500-c1c797ac8e91.scope
+[PASS] selfCgroup looks like a cgroup v2 path
+[PASS] cgroupOf(getpid()) == selfCgroup()
+[PASS] cgroupOf(0) empty
+[PASS] cgroupOf(-1) empty
+[PASS] cgroupOf(bogus) empty
+[PASS] empty path unsafe
+[PASS] own cgroup is NOT safe to freeze
+[PASS] session root unsafe
+[PASS] app.slice itself unsafe
+[PASS] session.slice itself unsafe
+[PASS] plasmashell blocked
+[PASS] kwin_wayland blocked
+[PASS] dbus blocked
+[PASS] naap.service blocked
+[PASS] path outside user@.service unsafe
+[PASS] normal app unit safe
+[PASS] dolphin app unit safe
+[PASS] flatpak scope safe
+[PASS] session.slice scope safe
+[PASS] xdg-desktop-portal blocked
+[PASS] pipewire blocked
+ALL TESTS PASSED (0 failures)
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"cgroup-helpers" end time: Nov 04 18:05 AEDT
+"cgroup-helpers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 04 18:05 AEDT

@@ -1,0 +1,15 @@
+[Unit]
+Description=NAAP Freeze Manager Bridge
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=@CMAKE_INSTALL_PREFIX@/bin/freeze-manager
+Restart=on-failure
+RestartSec=2
+# 停止服务时给 freeze-manager 一点时间解冻所有应用
+TimeoutStopSec=5
+
+[Install]
+WantedBy=graphical-session.target

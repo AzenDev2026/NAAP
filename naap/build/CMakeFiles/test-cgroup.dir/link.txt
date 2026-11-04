@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/test-cgroup.dir/link.d "CMakeFiles/test-cgroup.dir/test_cgroup.cpp.o" "CMakeFiles/test-cgroup.dir/src/freezer.cpp.o" -o test-cgroup
